@@ -118,6 +118,25 @@ let getMinuteFromMs=(x)=> remainingAfterConvert(msToTotalMinutes(x),60)
 /** This is the getHourFromMs function*/
 let getHourFromMs=(x)=>remainingAfterConvert(msToTotalHours(x),24)
 
+/**Part B*/
+/** This is the convertToSmaller function*/
+let convertToSmaller=(x,y)=>x*y
+/** This is the daysToTotalHours function*/
+let daysToTotalHours=(x)=>convertToSmaller(x,24)
+/**This is the daysToTotalMinutes function*/
+let daysToTotalMinutes=(x)=> convertToSmaller(daysToTotalHours(x),60)
+/** This is the daysToTotalSeconds function*/
+let daysToTotalSeconds=(x)=> convertToSmaller(daysToTotalMinutes(x),60)
+/** This is the remainingAfterConvert function for part b*/
+let remainingAfterConvertPartB=(x,y)=>Math.trunc(x%y)
+/**This is the getHourFromDays function*/
+let getHourFromDays=(x)=> remainingAfterConvertPartB(daysToTotalHours(x),24)
+/**This is the getMinuteFromDays function*/
+let getMinuteFromDays=(x)=> remainingAfterConvertPartB(daysToTotalMinutes(x),60)
+/**This is the getSecondFromDays function*/
+let getSecondFromDays=(x)=> remainingAfterConvertPartB(daysToTotalSeconds(x),60)
+
+
 
 /**
  * Given a number of milliseconds from midnight, returns the second (0 to 60) for the displayed time
@@ -125,14 +144,14 @@ let getHourFromMs=(x)=>remainingAfterConvert(msToTotalHours(x),24)
  * @return {number} second for the displayed time (0 to 60)
  */
 
-let getSecondFromMs   = num => 0;
+//let getSecondFromMs   = num => 0;
 
-let getMinuteFromMs   = num => 0;
-let getHourFromMs     = num => 0;
+//let getMinuteFromMs   = num => 0;
+//let getHourFromMs     = num => 0;
 
-let getSecondFromDays = num => 0;
-let getMinuteFromDays = num => 0;
-let getHourFromDays   = num => 0;
+//let getSecondFromDays = num => 0;
+//let getMinuteFromDays = num => 0;
+//let getHourFromDays   = num => 0;
 
 /* END REPLACEMENT FOR ASSIGNMENT 2 */
 
