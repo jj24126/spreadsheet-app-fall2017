@@ -101,39 +101,128 @@ let mouseButtonPressed = (event, index) => {
  * @todo THEN USING THESE FUNCTIONS, REPLACE THE 0 IN EACH FUNCTION DEFINITION BELOW WITH THE APPROPRIATE OUTPUT
  * @todo BE SURE TO DOCUMENT EACH FUNCTION IN JSDOC FORMAT (USE BELOW AS REFERENCE AND SEE: http://usejsdoc.org/)
  */
-/** This is the convertToLarger function*/
+/**
+Function convertToLarger takes two inputs, 
+and returns the total number of whole units in the number with that conversion factor.
+@param {number}(x,y) number and positive integer conversion factor
+@return {number} total number of whole units with that conversion factor
+*/
 let convertToLarger =(x,y)=>Math.trunc(x/y)
-/** This is the msToTotalSeconds function*/
+
+/**
+Function msToTotalSeconds converts the given number of milliseconds to seconds.
+@param {number} x, the amount of milliseconds to convert to seconds
+@return {number} the total number of seconds from milliseconds
+*/
 let msToTotalSeconds=(x)=> convertToLarger(x,1000)
-/** This is the msToTotalMinutes function*/
+
+/**
+Function msToTotalMinutes converts the given number of milliseconds to minutes.
+@param {number} x, the number of milliseconds to convert to minutes.
+@return {number} the number of minutes from the milliseconds.
+*/
 let msToTotalMinutes=(x)=> convertToLarger(msToTotalSeconds(x),60)
-/** This is the msToTotalHours funciton*/
+
+/**
+Function msToTotalHours converts the given number of milliseconds to the total number of hours.
+@param {number} x, the number of milliseconds to convert to hours.
+@return {number} the number of hours from the given milliseconds.
+*/
 let msToTotalHours = (x)=> convertToLarger(msToTotalMinutes(x),60)
-/** This is the remainingAfterConvert function*/
+
+/**
+Function remainingAfterConvert takes two inputs and returns the 
+total number of whole remaining smaller units after the number with that conversion factor has been removed.
+@param {number} (x,y) the two inputs used to find the whole remaining smaller units.
+@return {number} number of whole remaining smaller units.
+*/
 let remainingAfterConvert=(x,y)=>(x%y)
-/** This is the getSecondFromMs function*/
+
+/**
+Function getSecondFromMs takes the given number of milliseconds from midnight and 
+returns the second (0 to 60) for the displayed time.
+@param {number} x, the number of milliseconds.
+@return {number} returns the second from milliseconds(0 to 60).
+*/
 let getSecondFromMs=(x)=> remainingAfterConvert(msToTotalSeconds(x),60)
-/** This is the getMinuteFromMs function*/
+
+/**
+Function getMinuteFromMs takes the given number of milliseconds 
+from midnight and returns the minute (0 to 60) for the displayed time.
+@param {number} x, the number of milliseconds.
+@return {number} the minute from milliseconds (0 to 60).
+*/
 let getMinuteFromMs=(x)=> remainingAfterConvert(msToTotalMinutes(x),60)
-/** This is the getHourFromMs function*/
+
+/**
+Function getHourFromMs takes the given number of milliseconds
+from midnight and returns the hour (0 to 24) for the displayed time.
+@param {number} x, the number of milliseconds.
+@return {number} the hour from the milliseconds (0 to 24).
+*/
 let getHourFromMs=(x)=>remainingAfterConvert(msToTotalHours(x),24)
 
 /**Part B*/
-/** This is the convertToSmaller function*/
+
+/**
+Function convertToSmaller takes two inputs,and returns the total number
+of fractional units in the number with that conversion factor.
+@param {number} (x,y) the two numbers used to return number of fractional units.
+@return {number} number of fractional units in the number with conversion factor.
+*/
 let convertToSmaller=(x,y)=>x*y
-/** This is the daysToTotalHours function*/
+
+/**
+Function daysToTotalHours converts the given number of days to an equivalent number of hours.
+@param {number} x, the days to convert to hours.
+@return {number} the number of hours from given number of days.
+*/
 let daysToTotalHours=(x)=>convertToSmaller(x,24)
-/**This is the daysToTotalMinutes function*/
+
+/**
+Function daysToTotalMinutes converts the given number of days to an equivalent number of minutes.
+@param {number} x, the number of days to convert to minutes.
+@return {number} the total minutes from given number of days.
+*/
 let daysToTotalMinutes=(x)=> convertToSmaller(daysToTotalHours(x),60)
-/** This is the daysToTotalSeconds function*/
+
+/** 
+Function daysToTotalSeconds converts the given number of days to an equivalent number of seconds.
+@param {number} x, the number of days to convert to seconds.
+@return {number} the number of seconds from days.
+*/
 let daysToTotalSeconds=(x)=> convertToSmaller(daysToTotalMinutes(x),60)
-/** This is the remainingAfterConvert function for part b*/
+
+/**
+Function remainingAfterConvert takes two inputs, and returns the 
+total number of whole remaining smaller units after the number with that conversion factor has been removed.
+@param {number} (x,y), the two inputs used to return number of whole reminaing smaller units.
+@return {number} total number of whole remaining smaller units after number with conversion factor has been removed.
+*/
 let remainingAfterConvert=(x,y)=>Math.trunc(x%y)
-/**This is the getHourFromDays function*/
+
+/** 
+Function getHourFromDays takes the given number of days
+in decimal from midnight and returns the hour (0 to 24) for the displayed time.
+@param {decimal} x, the given number days.
+@return {number} the hour from days (0 to 24).
+*/
 let getHourFromDays=(x)=> remainingAfterConvert(daysToTotalHours(x),24)
-/**This is the getMinuteFromDays function*/
+
+/**
+Function getMinuteFromDays takes the given number of days in decimal form
+from midnight and returns the minute (0 to 60) for the displayed time.
+@param {decimal} x, the given number of days.
+@return {number} the minute form days (0 to 60).
+*/
 let getMinuteFromDays=(x)=> remainingAfterConvert(daysToTotalMinutes(x),60)
-/**This is the getSecondFromDays function*/
+
+/**
+Function getSecondFromDays takes the given number of days
+in decimal form from midnight and returns the second (0 to 60) for the displayed time.
+@param {decimal} x, the given number of days.
+@return {number} the second from days (0 to 60).
+*/
 let getSecondFromDays=(x)=> remainingAfterConvert(daysToTotalSeconds(x),60)
 
 
