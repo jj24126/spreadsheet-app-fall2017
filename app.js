@@ -128,13 +128,13 @@ let daysToTotalMinutes=(x)=> convertToSmaller(daysToTotalHours(x),60)
 /** This is the daysToTotalSeconds function*/
 let daysToTotalSeconds=(x)=> convertToSmaller(daysToTotalMinutes(x),60)
 /** This is the remainingAfterConvert function for part b*/
-let remainingAfterConvertPartB=(x,y)=>Math.trunc(x%y)
+let remainingAfterConvert=(x,y)=>Math.trunc(x%y)
 /**This is the getHourFromDays function*/
-let getHourFromDays=(x)=> remainingAfterConvertPartB(daysToTotalHours(x),24)
+let getHourFromDays=(x)=> remainingAfterConvert(daysToTotalHours(x),24)
 /**This is the getMinuteFromDays function*/
-let getMinuteFromDays=(x)=> remainingAfterConvertPartB(daysToTotalMinutes(x),60)
+let getMinuteFromDays=(x)=> remainingAfterConvert(daysToTotalMinutes(x),60)
 /**This is the getSecondFromDays function*/
-let getSecondFromDays=(x)=> remainingAfterConvertPartB(daysToTotalSeconds(x),60)
+let getSecondFromDays=(x)=> remainingAfterConvert(daysToTotalSeconds(x),60)
 
 
 
